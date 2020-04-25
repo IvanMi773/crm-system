@@ -61,12 +61,11 @@
 
 			<div class="input-field">
 				<input
-					id="password"
-					type="password"
+					id="name"
+					type="text"
 					v-model.trim="name"
 					:class="{
-						invalid:
-							($v.password.$dirty && !$v.password.required)
+						invalid: $v.password.$dirty && !$v.password.required,
 					}"
 				/>
 
@@ -128,7 +127,7 @@
 		},
 
 		methods: {
-			submitHandler() {
+			async submitHandler() {
 				if (this.$v.$invalid) {
 					this.$v.$touch();
 					return;
@@ -137,12 +136,16 @@
 				const formData = {
 					email: this.email,
 					password: this.password,
-					name: this.name
+					name: this.name,
 				};
 
-				console.log(formData);
+				try {
+					await this.$store.dispatch('register', formData);
+					this.$router.push('/');
+				} catch (error) {
+					throw error
+				}
 
-				this.$router.push('/');
 			},
 		},
 	};
