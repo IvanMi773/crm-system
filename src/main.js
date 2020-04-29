@@ -6,6 +6,7 @@ import router from './router';
 import store from './store';
 import 'materialize-css/dist/js/materialize';
 import dateFilter from '@/filters/DateFilter';
+import localizeFilter from '@/filters/localize.filter';
 import currencyFilter from '@/filters/CurrencyFilter';
 import MessagePlugin from '@/utils/Message.plugin';
 import Loader from '@/components/app/Loader'
@@ -21,6 +22,7 @@ Vue.use(Vuelidate);
 Vue.use(MessagePlugin);
 
 Vue.filter('date', dateFilter);
+Vue.filter('localize', localizeFilter)
 Vue.filter('currency', currencyFilter);
 
 Vue.component('Loader', Loader)
