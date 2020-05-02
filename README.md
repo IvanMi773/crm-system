@@ -1,6 +1,15 @@
-# crm
+# CRM(Customer relationship management) System
 
-## Project setup
+This app help you to controll your money and costs
+
+## To start using this app on local server you need:
+
+### Clone code:
+```
+git clone https://github.com/IvanMi773/crm-system.git
+```
+
+### Setup project
 ```
 npm install
 ```
@@ -9,16 +18,3 @@ npm install
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
